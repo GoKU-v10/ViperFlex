@@ -1,7 +1,7 @@
 services:
   - type: web
     name: viperflex-backend
-    env: java
+    runtime: java  
     plan: free
     region: oregon
     buildCommand: "./mvnw clean package -DskipTests"
