@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: viperflex-backend
+    env: java
+    plan: free
+    region: oregon
+    buildCommand: "./mvnw clean package -DskipTests"
+    startCommand: "java -jar target/ViperFlex.jar"
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        value: jdbc:postgresql://dpg-d1g10f2li9vc73a42iu0-a.oregon-postgres.render.com:5432/viperflex_db
+      - key: SPRING_DATASOURCE_USERNAME
+        value: viperflex_db_user
+      - key: SPRING_DATASOURCE_PASSWORD
+        value: V4X1hFfG4d112d78BGVGfWMN61CqDujm
+      - key: JWT_SECRET
+        value: TmV3U2VjcmV0S2V5Rm9ySldUU2lnbmluZ1B1cnBvc2VzMTIzNDU2Nzg=
+      - key: GOOGLE_CLIENT_ID
+        value: 23490978279-v3ephkg79g4lrnl8tunga5c0bf77sb58.apps.googleusercontent.com
+      - key: GOOGLE_CLIENT_SECRET
+        value: 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
