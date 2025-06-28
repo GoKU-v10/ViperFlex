@@ -1,7 +1,7 @@
 services:
   - type: web
     name: viperflex-backend
-    runtime: java  
+    runtime: docker  # ✅ workaround to allow java-based projects
     plan: free
     region: oregon
     buildCommand: "./mvnw clean package -DskipTests"
